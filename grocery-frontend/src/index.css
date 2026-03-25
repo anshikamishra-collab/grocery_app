@@ -1,0 +1,356 @@
+/* ================== Body & Gradient ================== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f8f9ff, #e6f7ff, #fef6ff);
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+  color: #333;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ================== Layout ================== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================== Sidebar ================== */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  padding: 50px 25px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #6c63ff;
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item:hover {
+  opacity: 1;
+  transform: translateX(6px);
+  background: rgba(108, 99, 255, 0.1);
+}
+
+.nav-item.active {
+  font-weight: 600;
+  color: #6c63ff;
+  opacity: 1;
+}
+
+/* ================== Main ================== */
+.main {
+  flex: 1;
+  padding: 60px;
+  background: linear-gradient(145deg, #fefeff, #f0f8ff);
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #4b4b4b;
+}
+
+.header button {
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #a0c4ff, #ffd6f6);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* ================== Board ================== */
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+/* ================== Cards (Neumorphic) ================== */
+.card {
+  background: #f0f4ff; /* pastel base */
+  border-radius: 28px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.08),
+    -8px -8px 20px rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    12px 12px 28px rgba(0, 0, 0, 0.1),
+    -12px -12px 28px rgba(255, 255, 255, 0.85);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.item-count {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.empty-text {
+  opacity: 0.4;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.card-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.pill-btn {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  background: linear-gradient(145deg, #ffd6f6, #a0c4ff);
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.08),
+    -4px -4px 10px rgba(255, 255, 255, 0.8);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pill-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    6px 6px 16px rgba(0, 0, 0, 0.12),
+    -6px -6px 16px rgba(255, 255, 255, 0.85);
+}
+
+/* ================== Floating Button ================== */
+.floating-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  font-size: 36px;
+  font-weight: 700;
+  background: #c4e1ff;
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.1),
+    -8px -8px 20px rgba(255, 255, 255, 0.85);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.15);
+  box-shadow:
+    12px 12px 28px rgba(0, 0, 0, 0.15),
+    -12px -12px 28px rgba(255, 255, 255, 0.9);
+}
+
+/* ================== Modal ================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.modal {
+  background: #f0f4ff;
+  padding: 40px;
+  border-radius: 28px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow:
+    12px 12px 28px rgba(0, 0, 0, 0.1),
+    -12px -12px 28px rgba(255, 255, 255, 0.85);
+}
+
+.modal input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #e6f0ff;
+  box-shadow:
+    inset 4px 4px 10px rgba(0, 0, 0, 0.06),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+}
+
+.modal input:focus {
+  outline: none;
+  box-shadow:
+    inset 2px 2px 6px rgba(0, 0, 0, 0.08),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.9),
+    0 0 8px rgba(108, 99, 255, 0.25);
+}
+
+.modal button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(145deg, #bde0fe, #a2d2ff);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+    4px 4px 12px rgba(0, 0, 0, 0.08),
+    -4px -4px 12px rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+.modal button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    6px 6px 18px rgba(0, 0, 0, 0.12),
+    -6px -6px 18px rgba(255, 255, 255, 0.9);
+}
+/* ----------------- Auth Screen (Darker Pastel) ----------------- */
+.auth-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #e3e8ff,
+    #cde7f6,
+    #f3e0ff
+  ); /* slightly darker pastel gradient */
+  animation: gradientMove 15s ease infinite;
+}
+
+.auth-card {
+  background: #d6e0ff; /* darker pastel card */
+  padding: 50px 40px;
+  border-radius: 28px;
+  box-shadow:
+    12px 12px 28px rgba(0, 0, 0, 0.15),
+    -12px -12px 28px rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  min-width: 320px;
+}
+
+.auth-card h1 {
+  font-size: 2.5rem;
+  color: #5a4de0; /* deeper pastel purple */
+  font-weight: 700;
+  text-align: center;
+}
+
+.auth-card button {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(
+    145deg,
+    #7da4ff,
+    #ff9ee3
+  ); /* darker pastel gradient */
+  color: #fff;
+  cursor: pointer;
+  box-shadow:
+    6px 6px 16px rgba(0, 0, 0, 0.15),
+    -6px -6px 16px rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+.auth-card button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.18),
+    -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
