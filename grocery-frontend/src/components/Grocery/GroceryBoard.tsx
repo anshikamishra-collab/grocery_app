@@ -40,7 +40,7 @@ export default function GroceryBoard() {
   const totalItems = lists.reduce((s, l) => s + l.items.length, 0);
   const totalSpend = lists.reduce(
     (s, l) => s + l.items.reduce((si, i) => si + i.price, 0),
-    0,
+    0
   );
 
   return (
@@ -75,6 +75,7 @@ export default function GroceryBoard() {
             key={list.id}
             list={list}
             onAddItem={() => setSelectedList(list.id)}
+            onRefetch={refetch}
           />
         ))}
       </div>

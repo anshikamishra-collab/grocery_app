@@ -26,5 +26,8 @@ export const typeDefs = gql`
   type Mutation {
     createList: GroceryList!
     addItem(listId: String!, name: String!, price: Float!): GroceryItem!
+    updateItem(itemId: String!, name: String!, price: Float!): GroceryItem!
+    deleteItem(itemId: String!): GroceryItem!
+    deleteList(listId: String!): GroceryList!
   }
 `;

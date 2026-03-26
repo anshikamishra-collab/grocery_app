@@ -875,3 +875,149 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* ================== Item Row Edit/Delete ================== */
+
+/* View mode: show action buttons only on hover */
+.item-row--view {
+  position: relative;
+}
+
+.item-row-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item-row-actions--hover {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.item-row--view:hover .item-row-actions--hover {
+  opacity: 1;
+}
+
+/* Edit mode row */
+.item-row--editing {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  background: rgba(224, 123, 84, 0.06);
+  border-color: var(--border-accent) !important;
+  flex-wrap: nowrap;
+}
+
+.item-edit-input {
+  padding: 5px 9px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--transition);
+  flex: 1;
+  min-width: 0;
+}
+
+.item-edit-input--price {
+  flex: 0 0 70px;
+}
+
+.item-edit-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(224, 123, 84, 0.1);
+}
+
+/* Action buttons (edit / delete / save / cancel) */
+.item-row-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.item-action-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  padding: 0;
+  line-height: 1;
+  color: var(--text-secondary);
+}
+
+.item-action-btn--edit:hover {
+  background: rgba(111, 168, 200, 0.12);
+  border-color: var(--sky);
+  color: var(--sky);
+}
+
+.item-action-btn--delete:hover {
+  background: rgba(224, 123, 84, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.item-action-btn--save {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
+.item-action-btn--save:hover {
+  background: var(--accent-hover);
+}
+
+.item-action-btn--cancel:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+/* Card header right — badge + delete list btn */
+.card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-delete-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  opacity: 0;
+  padding: 0;
+}
+
+.card:hover .card-delete-btn {
+  opacity: 1;
+}
+
+.card-delete-btn:hover {
+  background: rgba(224, 123, 84, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
